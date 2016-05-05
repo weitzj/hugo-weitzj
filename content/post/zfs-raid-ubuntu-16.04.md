@@ -14,6 +14,7 @@ fileserver up and running with the goal to:
 - Boot from ZFS
 - Have a Raid 10
 - (Raid 10 is not a requirement for this tutorial to work)
+- Do a fresh Ubuntu installation
 
 ### tl;dr
 
@@ -23,7 +24,10 @@ fileserver up and running with the goal to:
 - Putting the boot partition inside a zpool does not work. Use a *separate* UEFI
   partition for `/boot`
 - Grub2 has to be installed _after_ the first time you booted your newly installed system
-- Follow [this tutorial](https://github.com/zfsonlinux/pkg-zfs/wiki/HOWTO-install-Ubuntu-16.04-to-a-Native-ZFS-Root-Filesystem)
+- Follow [this
+  tutorial](https://github.com/zfsonlinux/pkg-zfs/wiki/HOWTO-install-Ubuntu-16.04-to-a-Native-ZFS-Root-Filesystem)
+  to migrate an existing Ubuntu installation onto ZFS
+- See the links at the end of this tutorial for further help
 
 # Setup
 
@@ -76,7 +80,7 @@ passwd -u root
 
 ###### Install ZFS-Tools
 
-ZFS is in the Ubuntu kernel, boot the tools are not on the DVD. So we need to
+ZFS is in the Ubuntu kernel, but the tools are not on the DVD. So we need to
 install them first.
 ```sh
 # Add zfstools repo
@@ -91,7 +95,7 @@ apt-get install zfsutils-linux zfs-initramfs
 ###### Create partitions
 
 Delete any old MBR/GPT partition tables on your harddrives (e.g. `mdadm`
-  superblocks), ottherwise ZFS might not load your storage pool.
+  superblocks), otherwise ZFS might not load your storage pool.
 ```sh
 # delete old partition tables
 sgdisk --zap-all /dev/sda
@@ -206,8 +210,12 @@ zfs set mountpoint=none storage
 zfs set mountpoint=none storage/ROOT
 zfs set mountpoint=none storage/HOME
 
+# mountpoint for `/`. Will later be set by Grub
+zfs set mountpoint=/ storage/ROOT/ubuntu-1
+
 # we need to use legacy mount points, since `mountall` does not
 # work with systemd (Ubuntu 16.04), yet.
+# legacy mountpoints means, we have to modify /etc/fstab later on
 zfs set mountpoint=legacy storage/HOME/home-1
 ```
 
@@ -435,7 +443,7 @@ grub-install
 reboot
 ```
 
-## You are done!
+## You are done 🎉!
 
 Further steps, which you might want to look at:
 

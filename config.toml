@@ -4,6 +4,7 @@ baseurl = "https://weitzj.github.io/"
 languageCode = "en-us"
 title = "Jan's braindump"
 PygmentsCodeFences = true
+pygmentsstyle = "native"
 MetaDataFormat = "toml"
 theme = "hugo-cactus-theme"
 paginate = 10
@@ -11,6 +12,7 @@ PaginatePath = "/"
 canonifyurls = true
 publishdir = "public"
 disqusShortname = "weitzj"
+googleAnalytics = "UA-77429207-1"
 
 [author]
     name = "Jan Weitz"
@@ -46,7 +48,7 @@ disqusShortname = "weitzj"
 	olderPosts = ""
 	newerPosts = ""
 	readMore = ""
-	copyright = "2016 Jan Weitz"
+	copyright =  "&copy; 2016 Jan Weitz"
 	# Sharing options and author information in posts
 	aboutAuthor = "I'm an enthusiastic gopher."
 	tweet = ""
@@ -62,8 +64,9 @@ disqusShortname = "weitzj"
 
 # Add additional social link entries underneath
 [social]
-    twitter  = "https://www.twitter.com/weitzjan"
-    github   = "https://www.github.com/weitzj"
-    #facebook = "https://www.facebook.com/"
-    #dribble  = "https://www.dribbble.com/"
+	email = "mailto:me@janweitz.de"
+	twitter  = "https://www.twitter.com/weitzjan"
+	github   = "https://www.github.com/weitzj"
+	#facebook = "https://www.facebook.com/"
+	#dribble  = "https://www.dribbble.com/"
 
