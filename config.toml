@@ -1,0 +1,69 @@
+# config.toml
+# https://github.com/CrimsonRay/slender
+baseurl = "https://weitzj.github.io/"
+languageCode = "en-us"
+title = "Jan's braindump"
+PygmentsCodeFences = true
+MetaDataFormat = "toml"
+theme = "hugo-cactus-theme"
+paginate = 10
+PaginatePath = "/"
+canonifyurls = true
+publishdir = "public"
+disqusShortname = "weitzj"
+
+[author]
+    name = "Jan Weitz"
+
+[permalinks]
+
+    # Permalink format for pages.
+    page = "/:title/"
+
+    # Permalink format for blog posts.
+    post = "/article/:title/"
+
+[params]
+	name = "Jan Weitz"
+	description = "Random stuff I do"
+	bio = "Blogger - Programmer - Gopher"
+	# Enter optionally your twitter account
+	twitter = "weitzjan"
+	enableRSS = true
+
+	# Add custom assets with their paths relative to the static folder
+	customCSS = []
+	customJS  = []
+
+	# The variables below are optionally too and can be used to
+	# translate or customize each string of the theme.
+
+	# Navigation links
+	home = ""
+	about = ""
+	subscribe = ""
+	# Pagination links
+	olderPosts = ""
+	newerPosts = ""
+	readMore = ""
+	copyright = "2016 Jan Weitz"
+	# Sharing options and author information in posts
+	aboutAuthor = "I'm an enthusiastic gopher."
+	tweet = ""
+	share = ""
+	# 404 page
+	title404 = ""
+	subtitle404 = ""
+
+	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+	iconFont = "mono-social"
+	# The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+	socialIconStyle = "rounded"
+
+# Add additional social link entries underneath
+[social]
+    twitter  = "https://www.twitter.com/weitzjan"
+    github   = "https://www.github.com/weitzj"
+    #facebook = "https://www.facebook.com/"
+    #dribble  = "https://www.dribbble.com/"
+
