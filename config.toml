@@ -1,6 +1,6 @@
 # config.toml
 # https://github.com/CrimsonRay/slender
-baseurl = "http://janweitz.de/"
+baseurl = "/"
 languageCode = "en-us"
 title = "Jan's braindump"
 PygmentsCodeFences = true
@@ -36,7 +36,6 @@ googleAnalytics = "UA-77429207-1"
 	# Add custom assets with their paths relative to the static folder
 	customCSS = []
 	customJS  = []
-
 	# The variables below are optionally too and can be used to
 	# translate or customize each string of the theme.
 
