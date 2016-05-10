@@ -1,6 +1,6 @@
 # config.toml
 # https://github.com/CrimsonRay/slender
-baseurl = "https://weitzj.github.io/"
+baseurl = "http://janweitz.de/"
 languageCode = "en-us"
 title = "Jan's braindump"
 PygmentsCodeFences = true
@@ -69,4 +69,3 @@ googleAnalytics = "UA-77429207-1"
 	github   = "https://www.github.com/weitzj"
 	#facebook = "https://www.facebook.com/"
 	#dribble  = "https://www.dribbble.com/"
-
