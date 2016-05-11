@@ -1,6 +1,5 @@
 # config.toml
-# https://github.com/CrimsonRay/slender
-baseurl = "/"
+baseurl = "https://janweitz.de/"
 languageCode = "en-us"
 title = "Jan's braindump"
 PygmentsCodeFences = true
